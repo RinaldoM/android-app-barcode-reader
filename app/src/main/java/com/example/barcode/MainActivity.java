@@ -1,6 +1,5 @@
 package com.example.barcode;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -45,22 +44,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void jsonParse(String barcode) {
         //https://www.youtube.com/watch?v=y2xtLqP8dSQ
-        String url = "http://192.168.0.110:8080/articleinfo/"+barcode;
+
+        String url = "http://192.168.0.110:8080/stockinfo/"+barcode;
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 response -> {
 
                     try {
-                        JSONArray jsonArray = response.getJSONArray("articles");
+                        JSONArray jsonArray = response.getJSONArray("article");
                         for (int i = 0; i < jsonArray.length(); i++) {
                             mTextViewResult.setText("");
                             JSONObject employee = jsonArray.getJSONObject(i);
 
                             String name = employee.getString("name");
-                            String category = employee.getString("category");
+                            String articleCode = employee.getString("articleCode");
+                            String location = employee.getString("location");
+                            String amount = employee.getString("amount");
 
-                            mTextViewResult.append("name: " + name + "\n");
-                            mTextViewResult.append("category: " + category + "\n");
+
+                            mTextViewResult.append("Name: " + name + "\n");
+                            mTextViewResult.append("Barcode: " + articleCode + "\n");
+                            mTextViewResult.append("Location: " + location + "\n");
+                            mTextViewResult.append("Stock amount: " + amount + "\n");
 
                         }
                     } catch (JSONException e) {
