@@ -8,30 +8,30 @@
     tools:context=".MainActivity">
 
 
+
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="28dp"
+        android:text="HOMEPAGE" />
+
+
     <Button
-        android:id="@+id/scanBtn"
-        android:layout_width="275dp"
-        android:layout_height="69dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="22dp"
-        android:text="SCAN" />
+        android:id="@+id/stockInfo"
+        android:layout_width="100sp"
+        android:layout_height="85sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="60dp"
+        android:text="stock info" />
 
-    <TextView
-        android:id="@+id/infolabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="14pt"
-        android:text="Article info" />
-
-    <TextView
-        android:id="@+id/text_view_result"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/infolabel"
-        android:textColor="@android:color/black"
-        android:textSize="9pt"
-        />
-
+    <Button
+        android:id="@+id/orderOverview"
+        android:layout_width="100sp"
+        android:layout_height="85sp"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="60dp"
+        android:text="receive" />
 
 </RelativeLayout>
